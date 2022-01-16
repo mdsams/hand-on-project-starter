@@ -1,11 +1,12 @@
 import React from "react";
+import Dashboard from "./pages/dashboard";
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <p>NEW PROJECT</p>
-    </div>
+    <React.Fragment className="App">
+      <Dashboard />
+    </React.Fragment>
   );
 }
 

@@ -1,0 +1,54 @@
+.main {
+  background: #e5e5e5;
+}
+
+.rectangleBox {
+  position: absolute;
+  width: 717px;
+  height: 812px;
+  /* left: 717px; */
+  top: 88px;
+
+  background: rgba(247, 248, 250, 0.5);
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+.primaryText {
+  position: absolute;
+  width: 381px;
+  height: 124px;
+  left: 119px;
+  top: 411px;
+
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 62px;
+  letter-spacing: -0.02em;
+
+  /* primary text */
+
+  color: #1e272e;
+}
+
+.secondaryText {
+  position: absolute;
+  width: 480px;
+  height: 135px;
+  left: 119px;
+  top: 575px;
+
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 160%;
+  /* or 45px */
+
+  letter-spacing: -0.02em;
+
+  /* secondary text */
+
+  color: #566474;
+}
