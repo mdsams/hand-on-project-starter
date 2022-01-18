@@ -1,8 +1,15 @@
 import React, { Component } from "react";
-import
+import "./Header.css";
+import cuvette from "../../images/cuvette.svg";
 class Header extends Component {
   render() {
-    return <React.Fragment></React.Fragment>;
+    return (
+      <React.Fragment>
+        <div className="navbar">
+          <img src={cuvette} alt="cuvette" />
+        </div>
+      </React.Fragment>
+    );
   }
 }
 

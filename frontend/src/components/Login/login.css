@@ -4,8 +4,8 @@
 
 .rectangleBox {
   position: absolute;
-  width: 717px;
-  height: 812px;
+  width: 50%;
+  height: 700px;
   /* left: 717px; */
   top: 88px;
 
@@ -15,10 +15,10 @@
 
 .primaryText {
   position: absolute;
-  width: 381px;
+  width: 50%;
   height: 124px;
   left: 119px;
-  top: 411px;
+  top: 200px;
 
   font-family: DM Sans;
   font-style: normal;
@@ -34,10 +34,10 @@
 
 .secondaryText {
   position: absolute;
-  width: 480px;
+  width: 50%;
   height: 135px;
   left: 119px;
-  top: 575px;
+  top: 350px;
 
   font-family: DM Sans;
   font-style: normal;
@@ -51,4 +51,16 @@
   /* secondary text */
 
   color: #566474;
+}
+
+.form {
+  position: absolute;
+  width: 498px;
+  height: 404px;
+  left: 836px;
+  top: 226px;
+
+  border: 1px solid #dfe0e0;
+  box-sizing: border-box;
+  border-radius: 10px;
 }

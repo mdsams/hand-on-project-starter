@@ -1,0 +1,10 @@
+.navbar img {
+  /* position: absolute; */
+  width: 10%;
+  height: auto;
+  left: 40px;
+  top: 88px;
+
+  background: #f7f8fa;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
