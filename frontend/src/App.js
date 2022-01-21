@@ -1,11 +1,13 @@
 import React from "react";
-import Dashboard from "./pages/dashboard";
+// import Dashboard from "./pages/Dashboard/Dashboard";
+import Loggedin from "./pages/LoggedIn/Loggedin";
 import "./App.css";
 
 function App() {
   return (
-    <React.Fragment className="App">
-      <Dashboard />
+    <React.Fragment>
+      {/* <Dashboard /> */}
+      <Loggedin />
     </React.Fragment>
   );
 }

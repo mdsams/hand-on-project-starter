@@ -2,65 +2,21 @@
   background: #e5e5e5;
 }
 
-.rectangleBox {
-  position: absolute;
-  width: 50%;
-  height: 700px;
-  /* left: 717px; */
-  top: 88px;
-
-  background: rgba(247, 248, 250, 0.5);
-  transform: matrix(1, 0, 0, 1, 0, 0);
+/* Implementing grid*/
+.container {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  padding-bottom: 20px;
+  /* bottom: 0px; */
+  margin-left: 2rem;
 }
 
-.primaryText {
-  position: absolute;
-  width: 50%;
-  height: 124px;
-  left: 119px;
-  top: 200px;
-
-  font-family: DM Sans;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 48px;
-  line-height: 62px;
-  letter-spacing: -0.02em;
-
-  /* primary text */
-
-  color: #1e272e;
-}
-
-.secondaryText {
-  position: absolute;
-  width: 50%;
-  height: 135px;
-  left: 119px;
-  top: 350px;
-
-  font-family: DM Sans;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 28px;
-  line-height: 160%;
-  /* or 45px */
-
-  letter-spacing: -0.02em;
-
-  /* secondary text */
-
-  color: #566474;
-}
-
-.form {
-  position: absolute;
-  width: 498px;
-  height: 404px;
-  left: 836px;
-  top: 226px;
-
-  border: 1px solid #dfe0e0;
-  box-sizing: border-box;
-  border-radius: 10px;
+#main {
+  /* position: absolute; */
+  /* border-radius: 100px; */
+  width: 90%;
+  height: 186px;
+  left: 100px;
+  top: 148px;
+  padding: 20px;
 }

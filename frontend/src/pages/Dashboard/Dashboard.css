@@ -1,0 +1,131 @@
+.container {
+  background-color: white;
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-gap: 50px;
+}
+
+#cuvette {
+  position: absolute;
+  width: 120px;
+  height: 29.24px;
+  left: 60px;
+  top: 28px;
+  grid-column: 1 / -1;
+}
+
+.rectangleBox {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  position: relative;
+  width: 717px;
+  height: 700px;
+  /* left: 717px; */
+  top: 88px;
+
+  background: rgba(247, 248, 250, 0.5);
+  /* transform: matrix(-1, 0, 0, 1, 0, 0); */
+}
+
+.primaryText {
+  position: absolute;
+  width: 381px;
+  height: 124px;
+  left: 119px;
+  top: 411px;
+
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 62px;
+  letter-spacing: -0.02em;
+  /* color: #1e272e; */
+}
+
+.secondaryText {
+  position: absolute;
+  width: 480px;
+  height: 135px;
+  left: 119px;
+  top: 575px;
+
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 160%;
+
+  letter-spacing: -0.02em;
+
+  /* color: #566474; */
+}
+
+#avatar {
+  position: absolute;
+  width: 103px;
+  height: 103px;
+  left: 119px;
+  top: 277px;
+}
+
+.form {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  position: absolute;
+  width: 498px;
+  height: 404px;
+  left: 836px;
+  top: 226px;
+
+  border: 1px solid #dfe0e0;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+#text {
+  position: absolute;
+  width: 197px;
+  height: 26px;
+  left: 50px;
+  bottom: 289px;
+
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 26px;
+  /* identical to box height */
+
+  letter-spacing: -0.02em;
+
+  color: #000000;
+}
+
+.formElement {
+  position: absolute;
+  width: 400px;
+  height: 174px;
+  left: 85px;
+  top: 189px;
+}
+
+#emailAddress {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 11px 62px 12px 16px;
+
+  position: absolute;
+  width: 450x;
+  height: 44px;
+  left: 65px;
+  top: 40px;
+
+  border: 1px solid #00050a;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
