@@ -12,3 +12,34 @@
   top: 28px;
   margin: auto;
 }
+
+/* CSS for Buttons*/
+.navbar button {
+  float: right;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+
+  /* position: absolute; */
+  /* width: 133px;
+  height: 44px;
+  left: 1247px;
+  top: 22px; */
+
+  background: #7f8eda;
+  border-radius: 5px;
+}
+
+/*CSS for Text in Button*/
+.buttonText {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 18px;
+  /* identical to box height, or 175% */
+
+  letter-spacing: -0.02em;
+
+  color: #ffffff;
+}

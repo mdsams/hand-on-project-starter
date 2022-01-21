@@ -1,22 +1,23 @@
 import React, { Component } from "react";
-// import ReactDOM from "react-dom";
-// import { NavLink } from "react-router-dom";
 import "./Header.css";
 import cuvette from "../../images/cuvette.svg";
 class Header extends Component {
   render() {
+    constructor(props) {
+      super(props)
+    
+      this.state = {
+         primaryState:true,
+      }
+    }
+    
     return (
       <React.Fragment>
         <div className="navbar">
           <img src={cuvette} alt="cuvette" id="cuvette" />
-          {/* <NavLink
-            to="#"
-            className={(isActive) =>
-              "nav-link" + (!isActive ? " unselected" : "")
-            }
-          >
-            About
-          </NavLink> */}
+          <button onClick={handleChange}>
+            <text className="buttonText">Login/Signup</text>
+          </button>
         </div>
       </React.Fragment>
     );

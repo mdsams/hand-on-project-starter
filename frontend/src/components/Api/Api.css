@@ -14,7 +14,7 @@
 }
 
 /*CSS for Card-Buttons*/
-button {
+.card button {
   border: none;
   outline: 0;
   display: inline-block;
