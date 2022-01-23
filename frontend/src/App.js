@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
 // import Dashboard from "./pages/Dashboard/Dashboard";
 import Loggedin from "./pages/LoggedIn/Loggedin";
 import "./App.css";
@@ -6,8 +7,10 @@ import "./App.css";
 function App() {
   return (
     <React.Fragment>
-      {/* <Dashboard /> */}
-      <Loggedin />
+      <BrowserRouter>
+        {/* <Dashboard /> */}
+        <Loggedin />
+      </BrowserRouter>
     </React.Fragment>
   );
 }

@@ -11,22 +11,23 @@ class Header extends Component {
     this.handliClick = this.handliClick.bind(this);
   }
 
-  handliClick() {
-    this.setState((prevState) => ({
-      isToggleLoginButton: !prevState.isToggleLoginButton,
-    }));
-  }
+  handliClick = (e) => {
+    e.preventDefault();
+    this.setState({
+      isToggleLoginButton: !this.state.isToggleLoginButton,
+    });
+  };
 
   render() {
     return (
       <React.Fragment>
         <div className="navbar">
           <img src={cuvette} alt="cuvette" id="cuvette" />
-          <button onClick={this.handliClick}>
-            <text className="buttonText">
-              {this.state.isToggleLoginButton ? "Login/Signup" : "+New Api"}
-            </text>
-          </button>
+          {this.state.isToggleLoginButton ? (
+            <button onClick={this.handliClick}>
+              <text className="buttonText">Login/Signup</text>
+            </button>
+          ) : null}
           {this.state.isToggleLoginButton || <RouterComponent />}
         </div>
       </React.Fragment>

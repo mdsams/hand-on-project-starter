@@ -3,40 +3,52 @@
   display: grid;
   height: 100vh;
   width: 100vw;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto;
-  grid-gap: 50px;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 10% 90%;
 }
 
-#cuvette {
-  position: absolute;
+.navbar {
+  grid-column: 1/-1;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  border: 2px solid black;
+  border-radius: 12px;
+  padding: 15px;
+}
+
+.navbar#cuvette {
+  /* position: absolute; */
   width: 120px;
   height: 29.24px;
   left: 60px;
-  top: 28px;
-  grid-column: 1 / -1;
+  top: 280px;
+  margin: auto;
 }
 
 .rectangleBox {
   grid-column-start: 1;
-  grid-column-end: 3;
-  position: relative;
-  width: 717px;
-  height: 700px;
-  /* left: 717px; */
-  top: 88px;
+  grid-column-end: 2;
 
   background: rgba(247, 248, 250, 0.5);
-  /* transform: matrix(-1, 0, 0, 1, 0, 0); */
 }
 
-.primaryText {
+.rightElement {
   position: absolute;
-  width: 381px;
-  height: 124px;
+  width: 480px;
+  height: 433px;
   left: 119px;
-  top: 411px;
+  top: 277px;
+}
 
+/* .rightElement #avatar {
+  position: absolute;
+  width: 103px;
+  height: 103px;
+  left: 119px;
+  top: 245px;
+} */
+
+.rightElement h1 {
   font-family: DM Sans;
   font-style: normal;
   font-weight: bold;
@@ -45,14 +57,7 @@
   letter-spacing: -0.02em;
   /* color: #1e272e; */
 }
-
-.secondaryText {
-  position: absolute;
-  width: 480px;
-  height: 135px;
-  left: 119px;
-  top: 575px;
-
+.rightElement h2 {
   font-family: DM Sans;
   font-style: normal;
   font-weight: 500;
@@ -61,20 +66,10 @@
 
   letter-spacing: -0.02em;
 
-  /* color: #566474; */
-}
-
-#avatar {
-  position: absolute;
-  width: 103px;
-  height: 103px;
-  left: 119px;
-  top: 277px;
+  color: #566474;
 }
 
 .form {
-  grid-column-start: 3;
-  grid-column-end: 4;
   position: absolute;
   width: 498px;
   height: 404px;
