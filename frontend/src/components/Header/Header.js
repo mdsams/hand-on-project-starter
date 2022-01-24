@@ -8,10 +8,10 @@ class Header extends Component {
     this.state = {
       isToggleLoginButton: true,
     };
-    this.handliClick = this.handliClick.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  handliClick = (e) => {
+  handleClick = (e) => {
     e.preventDefault();
     this.setState({
       isToggleLoginButton: !this.state.isToggleLoginButton,
@@ -24,11 +24,12 @@ class Header extends Component {
         <div className="navbar">
           <img src={cuvette} alt="cuvette" id="cuvette" />
           {this.state.isToggleLoginButton ? (
-            <button onClick={this.handliClick}>
+            <button onClick={this.handleClick}>
               <text className="buttonText">Login/Signup</text>
             </button>
-          ) : null}
-          {this.state.isToggleLoginButton || <RouterComponent />}
+          ) : (
+            <RouterComponent />
+          )}
         </div>
       </React.Fragment>
     );
