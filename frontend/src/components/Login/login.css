@@ -7,13 +7,10 @@
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   padding-bottom: 20px;
-  /* bottom: 0px; */
   margin-left: 2rem;
 }
 
 #main {
-  /* position: absolute; */
-  /* border-radius: 100px; */
   width: 90%;
   height: 186px;
   left: 100px;

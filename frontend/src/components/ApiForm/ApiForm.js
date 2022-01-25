@@ -3,25 +3,36 @@ import "./ApiForm.css";
 class ApiForm extends Component {
   render() {
     return (
-      <div>
-        <div className="container">
+      <div className="outerBox">
+        <div className="innerBox">
           <form>
             <h1>Add New API</h1>
-            <input type="text" placeholder="API Name" name="ApiName" required />
+            <input
+              type="text"
+              placeholder="API Name"
+              name="ApiName"
+              required
+              id="input1"
+            />
             <input
               type="text"
               placeholder="API End Point"
-              name="ApiName"
+              name="ApiEndPoint"
               required
+              id="input2"
             />
             <textarea
-              rows={4}
+              rows={6}
               cols={20}
               type="text"
               placeholder="API End Point"
               name="ApiName"
               required
+              id="textarea"
             />
+            <button type="button" className="submitbtn" id="button">
+              Add API
+            </button>
           </form>
         </div>
       </div>
