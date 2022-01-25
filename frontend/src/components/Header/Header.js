@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import RouterComponent from "../Router/RouterComponent";
+import { NavLink } from "react-router-dom";
+import ApiForm from "../ApiForm/ApiForm";
 import cuvette from "../../images/cuvette.svg";
 import "./Header.css";
 class Header extends Component {
@@ -7,14 +8,22 @@ class Header extends Component {
     super(props);
     this.state = {
       isToggleLoginButton: true,
+      isApiButtonOpen: false,
     };
     this.handleClick = this.handleClick.bind(this);
+    this.handleAPI = this.handleAPI.bind(this);
   }
 
   handleClick = (e) => {
     e.preventDefault();
     this.setState({
       isToggleLoginButton: !this.state.isToggleLoginButton,
+    });
+  };
+  handleAPI = (e) => {
+    e.preventDefault();
+    this.setState({
+      isApiButtonOpen: !this.state.isApiButtonOpen,
     });
   };
 
@@ -28,9 +37,28 @@ class Header extends Component {
               <text className="buttonText">Login/Signup</text>
             </button>
           ) : (
-            <RouterComponent />
+            <div className="nav">
+              <button onClick={this.handleAPI}>
+                <text className="buttonText">+New Api</text>
+              </button>
+              <div className="link">
+                <NavLink
+                  to="/MyAccount"
+                  activeStyle={{
+                    fontWeight: "bold",
+                    color: "red",
+                  }}
+                >
+                  My Account
+                </NavLink>
+                <NavLink to="/MyApis" id="myapi">
+                  My Apis
+                </NavLink>
+              </div>
+            </div>
           )}
         </div>
+        {this.state.isApiButtonOpen ? <ApiForm /> : null}
       </React.Fragment>
     );
   }
