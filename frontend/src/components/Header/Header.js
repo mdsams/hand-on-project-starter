@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import ApiForm from "../ApiForm/ApiForm";
 import cuvette from "../../images/cuvette.svg";
+// import { createBrowserHistory as history } from "history";
 import "./Header.css";
 class Header extends Component {
   constructor(props) {
@@ -26,6 +27,27 @@ class Header extends Component {
       isApiButtonOpen: !this.state.isApiButtonOpen,
     });
   };
+
+  // toggleScrollLock = () => {
+  //   document.querySelector("html").classList.toggle("scroll-lock");
+  // };
+
+  // onKeyDown = (event) => {
+  //   if (event.keyCode === 27) {
+  //     this.closeModal();
+  //   }
+  // };
+  // onClickOutside = (event) => {
+  //   if (this.modal && this.modal.contains(event.target)) return;
+  //   this.closeModal();
+  // };
+  // closeModal = () => {
+  //   this.setState({ isApiButtonOpen: false });
+  //   this.closeModal();
+  //   this.onKeyDown();
+  //   this.onClickOutside();
+  //   this.toggleScrollLock();
+  // };
 
   render() {
     return (
@@ -58,7 +80,9 @@ class Header extends Component {
             </div>
           )}
         </div>
-        {this.state.isApiButtonOpen ? <ApiForm /> : null}
+        {this.state.isApiButtonOpen ? (
+          <ApiForm closeModal={this.closeModal} />
+        ) : null}
       </React.Fragment>
     );
   }

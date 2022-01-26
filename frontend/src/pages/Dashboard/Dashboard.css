@@ -1,11 +1,11 @@
-.container {
+/* .container {
   background-color: white;
   display: grid;
   height: 100vh;
   width: 100vw;
   grid-template-columns: 50% 50%;
   grid-template-rows: 10% 90%;
-}
+} */
 
 .navbar {
   grid-column: 1/-1;

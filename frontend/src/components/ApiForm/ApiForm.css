@@ -1,18 +1,13 @@
 .outerBox {
-  /* display: none; Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  /* width: 100%; Full width
-  height: 100%; Full height */
+  /* position: fixed; */
+  /* z-index: 1; Sit on top */
   overflow: auto; /* Enable scroll if needed */
-  /* background-color: #474e5d; */
-  padding-top: 50px;
+  padding-top: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: transparent;
   left: 0;
   top: 0;
   bottom: 0;
