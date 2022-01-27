@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import ApiForm from "../ApiForm/ApiForm";
 import cuvette from "../../images/cuvette.svg";
-// import { createBrowserHistory as history } from "history";
+
+import { createBrowserHistory } from "history";
+const history = createBrowserHistory();
+import { withRouter } from "react-router-dom";
+
 import "./Header.css";
 class Header extends Component {
   constructor(props) {
@@ -16,7 +20,9 @@ class Header extends Component {
   }
 
   handleClick = (e) => {
+    console.log(history);
     e.preventDefault();
+    history.push("dashboard");
     this.setState({
       isToggleLoginButton: !this.state.isToggleLoginButton,
     });
@@ -55,17 +61,17 @@ class Header extends Component {
         <div className="navbar">
           <img src={cuvette} alt="cuvette" id="cuvette" />
           {this.state.isToggleLoginButton ? (
-            <button onClick={this.handleClick}>
-              <text className="buttonText">Login/Signup</text>
+            <button className="buttonText" onClick={this.handleClick}>
+              Login/Signup
             </button>
           ) : (
             <div className="nav">
-              <button onClick={this.handleAPI}>
-                <text className="buttonText">+New Api</text>
+              <button className="buttonText" onClick={this.handleAPI}>
+                +New Api
               </button>
               <div className="link">
                 <NavLink
-                  to="/MyAccount"
+                  to="/myaccount"
                   activeStyle={{
                     fontWeight: "bold",
                     color: "red",
@@ -73,19 +79,24 @@ class Header extends Component {
                 >
                   My Account
                 </NavLink>
-                <NavLink to="/MyApis" id="myapi">
+                <NavLink
+                  to="/myapis"
+                  activeStyle={{
+                    fontWeight: "bold",
+                    color: "red",
+                  }}
+                  id="myapi"
+                >
                   My Apis
                 </NavLink>
               </div>
             </div>
           )}
         </div>
-        {this.state.isApiButtonOpen ? (
-          <ApiForm closeModal={this.closeModal} />
-        ) : null}
+        {this.state.isApiButtonOpen ? <ApiForm /> : null}
       </React.Fragment>
     );
   }
 }
 
-export default Header;
+export default withRouter(Header);

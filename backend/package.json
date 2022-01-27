@@ -1,33 +1,25 @@
 {
   "name": "nodejs-rest-api-starter",
   "version": "1.0.0",
-  "type": "module",
   "description": "",
-  "main": "src/app.js",
-  "private": true,
+  "main": "src/index.js",
   "scripts": {
-    "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
     "lint": "npx eslint src/"
   },
-  "author": "Shams Tabrez",
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
-    "debug": "^4.3.3",
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
-    "http-errors": "^2.0.0",
-    "jade": "^1.11.0",
-    "mongoose": "^6.1.5",
-    "morgan": "^1.10.0"
+    "mongoose": "^6.1.5"
   },
   "devDependencies": {
     "eslint": "^7.30.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "esm": "^3.2.25",
     "nodemon": "^2.0.12",
     "prettier": "^2.3.2"
   }

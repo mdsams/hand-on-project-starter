@@ -1,24 +1,31 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Loggedin from "./pages/LoggedIn/Loggedin";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Dashboard from "./pages/Dashboard/Dashboard.js";
 import MyAccount from "./pages/MyAccount/MyAccount";
 import MyApis from "./pages/MyApis/MyApis";
-import Dashboard from "./pages/Dashboard/Dashboard";
+import LoggedOut from "./pages/LoggedOut/LoggedOut";
 import "./App.css";
+import Header from "./components/Header/Header.js";
 
 function App() {
   return (
-    <React.Fragment>
-      <BrowserRouter>
-        {/* <Dashboard /> */}
-        <Routes>
-          <Route path="/" element={<Loggedin />} />
-          <Route path="/Dashboard" element={<Dashboard />} />
-          <Route path="/MyAccount" element={<MyAccount />} />
-          <Route path="MyApis" element={<MyApis />} />
-        </Routes>
-      </BrowserRouter>
-    </React.Fragment>
+    <BrowserRouter>
+      <Header />
+      <Switch>
+        <Route path="/">
+          <Dashboard />
+        </Route>
+        <Route path="/loggedout">
+          <LoggedOut />
+        </Route>
+        <Route path="/myaccount">
+          <MyAccount />
+        </Route>
+        <Route path="myapis">
+          <MyApis />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
 

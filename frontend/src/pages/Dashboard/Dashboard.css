@@ -1,126 +1,19 @@
-/* .container {
-  background-color: white;
+.main {
+  background: #e5e5e5;
+}
+
+/* Implementing grid*/
+.container {
   display: grid;
-  height: 100vh;
-  width: 100vw;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 10% 90%;
-} */
-
-.navbar {
-  grid-column: 1/-1;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  border: 2px solid black;
-  border-radius: 12px;
-  padding: 15px;
+  grid-template-columns: 25% 25% 25% 25%;
+  padding-bottom: 20px;
+  margin-left: 2rem;
 }
 
-.navbar#cuvette {
-  /* position: absolute; */
-  width: 120px;
-  height: 29.24px;
-  left: 60px;
-  top: 280px;
-  margin: auto;
-}
-
-.rectangleBox {
-  grid-column-start: 1;
-  grid-column-end: 2;
-
-  background: rgba(247, 248, 250, 0.5);
-}
-
-.rightElement {
-  position: absolute;
-  width: 480px;
-  height: 433px;
-  left: 119px;
-  top: 277px;
-}
-
-/* .rightElement #avatar {
-  position: absolute;
-  width: 103px;
-  height: 103px;
-  left: 119px;
-  top: 245px;
-} */
-
-.rightElement h1 {
-  font-family: DM Sans;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 48px;
-  line-height: 62px;
-  letter-spacing: -0.02em;
-  /* color: #1e272e; */
-}
-.rightElement h2 {
-  font-family: DM Sans;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 28px;
-  line-height: 160%;
-
-  letter-spacing: -0.02em;
-
-  color: #566474;
-}
-
-.form {
-  position: absolute;
-  width: 498px;
-  height: 404px;
-  left: 836px;
-  top: 226px;
-
-  border: 1px solid #dfe0e0;
-  box-sizing: border-box;
-  border-radius: 10px;
-}
-
-#text {
-  position: absolute;
-  width: 197px;
-  height: 26px;
-  left: 50px;
-  bottom: 289px;
-
-  font-family: DM Sans;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 26px;
-  /* identical to box height */
-
-  letter-spacing: -0.02em;
-
-  color: #000000;
-}
-
-.formElement {
-  position: absolute;
-  width: 400px;
-  height: 174px;
-  left: 85px;
-  top: 189px;
-}
-
-#emailAddress {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 11px 62px 12px 16px;
-
-  position: absolute;
-  width: 450x;
-  height: 44px;
-  left: 65px;
-  top: 40px;
-
-  border: 1px solid #00050a;
-  box-sizing: border-box;
-  border-radius: 5px;
+#main {
+  width: 90%;
+  height: 186px;
+  left: 100px;
+  top: 148px;
+  padding: 20px;
 }
