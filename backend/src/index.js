@@ -1,21 +1,29 @@
 const express = require("express");
-const mongoose = require("mongoose");
+const morgan = require("morgan");
 const dotenv = require("dotenv");
+const user = require("./routes/user");
+const InitiateMongoServer = require("./config/db");
 dotenv.config();
 
-const port = process.env.PORT;
-const url = process.env.MONGODB_URL;
+//Initiating Mongo Server
 
+InitiateMongoServer();
+
+//Express Server
 const app = express();
+app.use(morgan("dev"));
 
-mongoose
-  .connect(url)
-  .then(() => {
-    console.log("MongoDB Server Connected");
-  })
-  .catch((err) => {
-    console.log("Error Connecting to DB" + err);
-  });
+const port = process.env.PORT;
+
+//Middleware
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.json({ message: "API Working" });
+});
+
+app.use("/user", user);
 
 app.listen(port, () => {
   console.log(`Express Server has started at ${port}`);
