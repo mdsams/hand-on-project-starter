@@ -2,7 +2,6 @@ const express = require("express");
 const { check, validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const auth = require("../middlewares/auth");
 const router = express.Router();
 
 const User = require("../models/user");
@@ -117,7 +116,7 @@ router.post(
 
       jwt.sign(
         payload,
-        "secret",
+        "randomString",
         {
           expiresIn: 3600,
         },
@@ -136,15 +135,5 @@ router.post(
     }
   },
 );
-
-router.get("/me", auth, async (req, res) => {
-  try {
-    //request.user is getting fetched from Middleware after token authentication
-    const user = await User.findById(req.user.id);
-    res.json(user);
-  } catch (e) {
-    res.send({ message: "Error in Fetching user" });
-  }
-});
 
 module.exports = router;

@@ -2,6 +2,8 @@ const express = require("express");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
 const user = require("./routes/user");
+const auth = require("./middlewares/auth");
+const verify = require("./routes/verify");
 const InitiateMongoServer = require("./config/db");
 dotenv.config();
 
@@ -24,6 +26,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/user", user);
+app.use("/protected", auth, verify);
 
 app.listen(port, () => {
   console.log(`Express Server has started at ${port}`);
