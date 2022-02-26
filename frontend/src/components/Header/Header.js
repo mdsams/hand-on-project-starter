@@ -1,37 +1,30 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import ApiForm from "../ApiForm/ApiForm";
 import cuvette from "../../images/cuvette.svg";
 
-import { createBrowserHistory } from "history";
-const history = createBrowserHistory();
-import { withRouter } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+// const history = createBrowserHistory();
+// import { withRouter } from "react-router-dom";
 
 import "./Header.css";
-class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isToggleLoginButton: true,
-      isApiButtonOpen: false,
-    };
-    this.handleClick = this.handleClick.bind(this);
-    this.handleAPI = this.handleAPI.bind(this);
-  }
 
-  handleClick = (e) => {
+const Header = () => {
+  let history = useHistory();
+
+  const [isToggleLoginButton, setToggleLoginButton] = useState(true);
+  const [isApiButtonOpen, setApiButtonOpen] = useState(false);
+
+  const handleClick = (e) => {
     console.log(history);
     e.preventDefault();
-    history.push("dashboard");
-    this.setState({
-      isToggleLoginButton: !this.state.isToggleLoginButton,
-    });
+    history.push("/loggedout");
+    setToggleLoginButton(!isToggleLoginButton);
   };
-  handleAPI = (e) => {
+
+  const handleAPI = (e) => {
     e.preventDefault();
-    this.setState({
-      isApiButtonOpen: !this.state.isApiButtonOpen,
-    });
+    setApiButtonOpen(!isApiButtonOpen);
   };
 
   // toggleScrollLock = () => {
@@ -55,48 +48,46 @@ class Header extends Component {
   //   this.toggleScrollLock();
   // };
 
-  render() {
-    return (
-      <React.Fragment>
-        <div className="navbar">
-          <img src={cuvette} alt="cuvette" id="cuvette" />
-          {this.state.isToggleLoginButton ? (
-            <button className="buttonText" onClick={this.handleClick}>
-              Login/Signup
+  return (
+    <React.Fragment>
+      <div className="navbar">
+        <img src={cuvette} alt="cuvette" id="cuvette" />
+        {isToggleLoginButton ? (
+          <button className="buttonText" onClick={handleClick}>
+            Login/Signup
+          </button>
+        ) : (
+          <div className="nav">
+            <button className="buttonText" onClick={handleAPI}>
+              +New Api
             </button>
-          ) : (
-            <div className="nav">
-              <button className="buttonText" onClick={this.handleAPI}>
-                +New Api
-              </button>
-              <div className="link">
-                <NavLink
-                  to="/myaccount"
-                  activeStyle={{
-                    fontWeight: "bold",
-                    color: "red",
-                  }}
-                >
-                  My Account
-                </NavLink>
-                <NavLink
-                  to="/myapis"
-                  activeStyle={{
-                    fontWeight: "bold",
-                    color: "red",
-                  }}
-                  id="myapi"
-                >
-                  My Apis
-                </NavLink>
-              </div>
+            <div className="link">
+              <NavLink
+                to="/myaccount"
+                activeStyle={{
+                  fontWeight: "bold",
+                  color: "red",
+                }}
+              >
+                My Account
+              </NavLink>
+              <NavLink
+                to="/myapis"
+                activeStyle={{
+                  fontWeight: "bold",
+                  color: "red",
+                }}
+                id="myapi"
+              >
+                My Apis
+              </NavLink>
             </div>
-          )}
-        </div>
-        {this.state.isApiButtonOpen ? <ApiForm /> : null}
-      </React.Fragment>
-    );
-  }
-}
+          </div>
+        )}
+      </div>
+      {isApiButtonOpen ? <ApiForm /> : null}
+    </React.Fragment>
+  );
+};
 
-export default withRouter(Header);
+export default Header;

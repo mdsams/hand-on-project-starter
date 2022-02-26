@@ -12,9 +12,6 @@ function App() {
     <BrowserRouter>
       <Header />
       <Switch>
-        <Route path="/">
-          <Dashboard />
-        </Route>
         <Route path="/loggedout">
           <LoggedOut />
         </Route>
@@ -23,6 +20,9 @@ function App() {
         </Route>
         <Route path="myapis">
           <MyApis />
+        </Route>
+        <Route path="/">
+          <Dashboard />
         </Route>
       </Switch>
     </BrowserRouter>
