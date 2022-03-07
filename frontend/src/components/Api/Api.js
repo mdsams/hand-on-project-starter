@@ -1,32 +1,36 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import CARDS from "./Apiinfo";
-// import Img from "../../images/img.png";
 import "./Api.css";
+import SelectedApi from "./SelectedApi";
 
-class Api extends Component {
-  constructor(props) {
-    super(props);
+const Api = () => {
+  const [cards] = useState(CARDS);
+  const [selectedCard, setSelectedCard] = useState(cards[0]);
 
-    this.state = {
-      cards: CARDS,
-    };
-  }
+  const APIS = cards.map((card) => {
+    return (
+      <div
+        key={card.id}
+        className="card"
+        data-id={card.id}
+        onClick={() => {
+          console.log("clicked");
+          setSelectedCard(card);
+        }}
+      >
+        <img src={card.img} alt={card.name} className="cardMedia" />
+        <h1> {card.name} </h1>
+        <p className="title">{card.description}</p>
+      </div>
+    );
+  });
 
-  render() {
-    const APIS = this.state.cards.map((card) => {
-      return (
-        <div key={card.id} className="card">
-          <img src={card.img} alt={card.name} className="cardMedia" />
-          <h1> {card.name} </h1>
-          <p className="title">{card.description}</p>
-          <p>
-            <button>Share</button>
-          </p>
-        </div>
-      );
-    });
-    return <div className="container">{APIS}</div>;
-  }
-}
+  return (
+    <div className="dashboard">
+      <SelectedApi card={selectedCard} />
+      <div className="container">{APIS}</div>
+    </div>
+  );
+};
 
 export default Api;

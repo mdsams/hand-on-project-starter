@@ -1,19 +1,6 @@
-.main {
-  background: #e5e5e5;
-}
-
 /* Implementing grid*/
 .container {
-  display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  padding-bottom: 20px;
-  margin-left: 2rem;
-}
-
-#main {
-  width: 90%;
-  height: 186px;
-  left: 100px;
-  top: 148px;
-  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }

@@ -1,25 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { UserContext } from "../../App";
 import { NavLink } from "react-router-dom";
 import ApiForm from "../ApiForm/ApiForm";
 import cuvette from "../../images/cuvette.svg";
 
 import { useHistory } from "react-router-dom";
-// const history = createBrowserHistory();
-// import { withRouter } from "react-router-dom";
 
 import "./Header.css";
 
 const Header = () => {
   let history = useHistory();
+  const [auth, setAuth] = useContext(UserContext);
 
-  const [isToggleLoginButton, setToggleLoginButton] = useState(true);
+  console.log(auth, setAuth);
+
+  // const [isToggleLoginButton, setToggleLoginButton] = useState(true);
   const [isApiButtonOpen, setApiButtonOpen] = useState(false);
 
   const handleClick = (e) => {
-    console.log(history);
     e.preventDefault();
-    history.push("/loggedout");
-    setToggleLoginButton(!isToggleLoginButton);
+    history.push("/auth");
+    setAuth(!auth);
+    // useRef(isToggleLoginButton == false);
   };
 
   const handleAPI = (e) => {
@@ -27,32 +29,11 @@ const Header = () => {
     setApiButtonOpen(!isApiButtonOpen);
   };
 
-  // toggleScrollLock = () => {
-  //   document.querySelector("html").classList.toggle("scroll-lock");
-  // };
-
-  // onKeyDown = (event) => {
-  //   if (event.keyCode === 27) {
-  //     this.closeModal();
-  //   }
-  // };
-  // onClickOutside = (event) => {
-  //   if (this.modal && this.modal.contains(event.target)) return;
-  //   this.closeModal();
-  // };
-  // closeModal = () => {
-  //   this.setState({ isApiButtonOpen: false });
-  //   this.closeModal();
-  //   this.onKeyDown();
-  //   this.onClickOutside();
-  //   this.toggleScrollLock();
-  // };
-
   return (
     <React.Fragment>
       <div className="navbar">
         <img src={cuvette} alt="cuvette" id="cuvette" />
-        {isToggleLoginButton ? (
+        {auth ? (
           <button className="buttonText" onClick={handleClick}>
             Login/Signup
           </button>

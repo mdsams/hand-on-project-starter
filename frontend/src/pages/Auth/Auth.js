@@ -1,8 +1,22 @@
-import React from "react";
-import "./LoggedOut.css";
+import React, { useState } from "react";
+import "./Auth.css";
+import { useHistory } from "react-router-dom";
 import Avatar from "../../images/avatar.svg";
 
-function LoggedOut() {
+function Auth() {
+  const [email, setEmail] = useState("");
+  const [password, setpassword] = useState("");
+  let history = useHistory();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    history.push("/");
+    // setEmail(email);
+    // setpassword(password);
+    // setIsLoggedIn(true);
+    console.log(email + "\n" + password);
+  }
+
   return (
     <div className="loggingmain">
       <div className="rectangleBox">
@@ -16,7 +30,7 @@ function LoggedOut() {
         </div>
       </div>
       <div className="form">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="formElement">
             <h2 id="text">Login to your Account</h2>
             <input
@@ -24,6 +38,8 @@ function LoggedOut() {
               name="Email"
               required
               id="emailAddress"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <input
               placeholder="Password"
@@ -31,6 +47,8 @@ function LoggedOut() {
               type="password"
               id="password"
               name="Password"
+              value={password}
+              onChange={(e) => setpassword(e.target.value)}
             />
 
             <button
@@ -38,6 +56,7 @@ function LoggedOut() {
               type="submit"
               value="submit"
               color="primary"
+              onSubmit={handleSubmit}
             >
               Login/Signup
             </button>
@@ -48,4 +67,4 @@ function LoggedOut() {
   );
 }
 
-export default LoggedOut;
+export default Auth;

@@ -1,10 +1,12 @@
 /*CSS for Cards*/
 .card {
+  background-color: whitesmoke;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 400px;
-  margin: auto;
+  width: 400px;
+  height: 400px;
   text-align: center;
   font-family: arial;
+  margin-bottom: 2.5rem;
 }
 
 /*CSS for Card-title*/
@@ -13,27 +15,19 @@
   font-size: 18px;
 }
 
-/*CSS for Card-Buttons*/
-.card button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 22px;
-}
-button:hover {
-  opacity: 0.7;
+.cardMedia {
+  margin-top: 0.5rem;
+  height: 15rem;
+  width: 15rem;
 }
 
-.cardMedia {
-  height: 100;
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
 }
 
 .container {
-  border: 100px;
+  padding: 2rem;
+  justify-content: space-between;
 }

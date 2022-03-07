@@ -36,11 +36,11 @@
   outline: none;
 }
 
-button {
+/* button {
   background-color: rgb(73, 73, 219);
   color: white;
   font-size: 20px;
-}
+} */
 
 button:hover {
   opacity: 0.8;

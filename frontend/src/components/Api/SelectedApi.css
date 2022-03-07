@@ -1,0 +1,61 @@
+.ApiSelected {
+  display: flex;
+  flex-direction: row;
+  background-color: #caebff;
+  border-radius: 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ApiSelected2 {
+  background-color: rgb(255, 158, 158);
+  border-radius: 0px 300px 300px 0px;
+}
+
+.SelectedImage {
+  margin: 10px 150px 2px 40px;
+  height: 12rem;
+  width: 12rem;
+  border-radius: 1.5rem;
+}
+
+.SelectedApiDescSetting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.SelectedApiDescSetting p {
+  font-weight: bold;
+  font-size: 20px;
+  color: rgb(100, 92, 92);
+}
+.SelectedApiDescSetting h1 {
+  font-size: 32px;
+}
+
+.SelectedApiButton {
+  align-items: center;
+  width: 8rem;
+  height: 3rem;
+  background: #7f8eda;
+  border-radius: 5px;
+  margin-right: 4rem;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: -0.02em;
+
+  color: #ffffff;
+}
+
+.SelectedApiButton:hover {
+  background: rgb(255, 158, 158);
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.1);
+  box-shadow: 0 0 5px rgb(255, 158, 158), 0 0 25px rgb(255, 158, 158),
+    0 0 50px rgb(255, 158, 158), 0 0 200px rgb(255, 158, 158);
+}
