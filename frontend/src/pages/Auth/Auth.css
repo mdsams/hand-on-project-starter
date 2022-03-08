@@ -1,46 +1,28 @@
-/* body {
-  overflow-y: hidden;
-} */
-/* .navbar {
-  border: 2px solid black;
-  border-radius: 12px;
-  padding: 15px;
+.loggingmain {
+  display: flex;
+  flex-direction: column;
 }
 
-.navbar#cuvette {
-  position: absolute;
-  width: 120px;
-  height: 29.24px;
-  left: 60px;
-  top: 280px;
-  margin: auto;
-} */
-
+.Cuvette {
+  width: 10rem;
+  height: 3rem;
+  margin: 0.5rem 0rem 1rem 0.8rem;
+}
 .rectangleBox {
+  border-top: 1px solid rgb(168, 162, 162);
   display: flex;
-  background: rgba(247, 248, 250, 0.5);
-  width: 45rem;
-  height: 43.9rem;
-  left: 119px;
-  /* top: 277px; */
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .rightElement {
   margin-top: 10rem;
   margin-left: 8rem;
-  width: 480px;
-  height: 433px;
+  width: 30%;
+  /* height: 433px;
   left: 119px;
-  top: 277px;
+  top: 277px; */
 }
-
-/* .rightElement #avatar {
-  position: absolute;
-  width: 103px;
-  height: 103px;
-  left: 119px;
-  top: 245px;
-} */
 
 .rightElement h1 {
   font-family: DM Sans;
@@ -63,34 +45,25 @@
 }
 
 .form {
-  margin-left: 53rem;
-  margin-top: -35rem;
-
-  width: 34rem;
-  height: 27rem;
-
-  border: 1px solid #dfe0e0;
-  box-sizing: border-box;
-  border-radius: 10px;
-}
-
-.formElement {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  /* align-items: center; */
-  /* max-height: 100vh; */
-  /* width: 398px; */
-  height: 400px;
-  margin: 10px;
+  width: 40%;
+  margin-right: 5rem;
+  margin-top: 8rem;
+
+  border: 2px solid #dfe0e0;
+  box-sizing: border-box;
+  border-radius: 10px;
 }
 
 #emailAddress,
 #password,
 #loggedbutton {
-  align-content: center;
-  /* width: 100%; */
-  padding: 18px 20px;
+  width: 500px;
+  height: 50px;
+  padding-left: 15px;
   margin: 20px;
   box-sizing: border-box;
   border: 1px solid #555;

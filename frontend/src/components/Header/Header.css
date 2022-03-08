@@ -1,31 +1,24 @@
 .navbar {
-  border: 2px solid black;
-  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
   padding: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .navbar#cuvette {
-  position: absolute;
-  width: 120px;
-  height: 29.24px;
-  left: 60px;
-  top: 28px;
-  margin: auto;
+  width: 10rem;
+  height: 3rem;
+  margin: 0.5rem 0rem 1rem 0.8rem;
 }
 
 /* CSS for Buttons*/
 .navbar button {
   float: right;
-  justify-content: center;
-  align-items: center;
   padding: 8px 16px;
   margin-right: 20px;
-  /* position: absolute; */
-  /* width: 133px;
-  height: 44px;
-  left: 1247px;
-  top: 22px; */
-
   background: #7f8eda;
   border-radius: 5px;
 }
@@ -45,7 +38,7 @@
 }
 
 .nav {
-  display: unset;
+  align-items: flex-end;
 }
 
 .link {

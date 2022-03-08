@@ -4,22 +4,20 @@ import "./Api.css";
 import SelectedApi from "./SelectedApi";
 
 const Api = () => {
-  const [cards] = useState(CARDS);
-  const [selectedCard, setSelectedCard] = useState(cards[0]);
+  const [selectedCard, setSelectedCard] = useState(CARDS[0]);
 
-  const APIS = cards.map((card) => {
+  const APIS = CARDS.map((card) => {
     return (
       <div
         key={card.id}
         className="card"
         data-id={card.id}
         onClick={() => {
-          console.log("clicked");
           setSelectedCard(card);
         }}
       >
         <img src={card.img} alt={card.name} className="cardMedia" />
-        <h1> {card.name} </h1>
+        <h2> {card.name} </h2>
         <p className="title">{card.description}</p>
       </div>
     );

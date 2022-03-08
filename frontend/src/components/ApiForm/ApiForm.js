@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useRef } from "react";
+import ReactDOM from "react-dom";
+import PropTypes from "prop-types";
 import "./ApiForm.css";
 
-const ApiForm = () => {
-  return (
-    <div className="outerBox">
+const ApiForm = ({ setApiButtonOpen }) => {
+  //close the model when clicking outside the model
+  const modelRef = useRef();
+  const closeModel = (e) => {
+    if (e.target === modelRef.current) {
+      setApiButtonOpen(false);
+    }
+  };
+
+  return ReactDOM.createPortal(
+    <div ref={modelRef} onClick={closeModel} className="outerBox">
       <div className="innerBox">
         <form>
           <h1>Add New API</h1>
@@ -35,8 +45,13 @@ const ApiForm = () => {
           </button>
         </form>
       </div>
-    </div>
+    </div>,
+    document.getElementById("portal"),
   );
+};
+
+ApiForm.propTypes = {
+  setApiButtonOpen: PropTypes.func,
 };
 
 export default ApiForm;

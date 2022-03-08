@@ -1,4 +1,5 @@
 .ApiSelected {
+  margin: 20px 10px 40px 10px;
   display: flex;
   flex-direction: row;
   background-color: #caebff;
@@ -8,7 +9,7 @@
 }
 
 .ApiSelected2 {
-  background-color: rgb(255, 158, 158);
+  background-color: #d3b4f6;
   border-radius: 0px 300px 300px 0px;
 }
 
@@ -52,10 +53,10 @@
 }
 
 .SelectedApiButton:hover {
-  background: rgb(255, 158, 158);
+  background: #d3b4f6;
   -ms-transform: scale(1.5); /* IE 9 */
   -webkit-transform: scale(1.5); /* Safari 3-8 */
   transform: scale(1.1);
-  box-shadow: 0 0 5px rgb(255, 158, 158), 0 0 25px rgb(255, 158, 158),
-    0 0 50px rgb(255, 158, 158), 0 0 200px rgb(255, 158, 158);
+  box-shadow: 0 0 5px #d3b4f6, 0 0 25px #d3b4f6, 0 0 50px #d3b4f6,
+    0 0 200px #d3b4f6;
 }

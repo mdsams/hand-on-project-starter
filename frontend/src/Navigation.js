@@ -4,6 +4,7 @@ import Dashboard from "./pages/Dashboard/Dashboard.js";
 import MyAccount from "./pages/MyAccount/MyAccount";
 import MyApis from "./pages/MyApis/MyApis";
 import Auth from "./pages/Auth/Auth";
+import ApiContainer from "./pages/ApiContainer/ApiContainer.js";
 // import Header from "./components/Header/Header.js";
 
 function Navigation() {
@@ -13,10 +14,13 @@ function Navigation() {
         <Route path="/auth">
           <Auth />
         </Route>
+        <Route path="/ApiContainer">
+          <ApiContainer />
+        </Route>
         <Route path="/myaccount">
           <MyAccount />
         </Route>
-        <Route path="myapis">
+        <Route path="/myapis">
           <MyApis />
         </Route>
         <Route path="/">

@@ -11,17 +11,12 @@ import "./Header.css";
 const Header = () => {
   let history = useHistory();
   const [auth, setAuth] = useContext(UserContext);
-
-  console.log(auth, setAuth);
-
-  // const [isToggleLoginButton, setToggleLoginButton] = useState(true);
   const [isApiButtonOpen, setApiButtonOpen] = useState(false);
 
   const handleClick = (e) => {
     e.preventDefault();
     history.push("/auth");
     setAuth(!auth);
-    // useRef(isToggleLoginButton == false);
   };
 
   const handleAPI = (e) => {
@@ -66,7 +61,7 @@ const Header = () => {
           </div>
         )}
       </div>
-      {isApiButtonOpen ? <ApiForm /> : null}
+      {isApiButtonOpen ? <ApiForm setApiButtonOpen={setApiButtonOpen} /> : null}
     </React.Fragment>
   );
 };

@@ -1,12 +1,19 @@
 /*CSS for Cards*/
 .card {
-  background-color: whitesmoke;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  width: 400px;
-  height: 400px;
+  background-color: rgb(247, 245, 245);
+  width: 20rem;
+  height: 20rem;
   text-align: center;
   font-family: arial;
   margin-bottom: 2.5rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.card:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.1);
 }
 
 /*CSS for Card-title*/
@@ -17,8 +24,8 @@
 
 .cardMedia {
   margin-top: 0.5rem;
-  height: 15rem;
-  width: 15rem;
+  height: 10rem;
+  width: 10rem;
 }
 
 .dashboard {
@@ -28,6 +35,8 @@
 }
 
 .container {
-  padding: 2rem;
+  margin: 20px 10px 40px 10px;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
