@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Header from "../../components/Header/Header";
-import PropTypes from "prop-types";
 import { useLocation } from "react-router-dom";
 import "./ApiContainer.css";
+// import Img from '../../images/selectedImage.png'
 
 // eslint-disable-next-line no-unused-vars
-function ApiContainer(props) {
+function ApiContainer() {
   const [selectedImage, setSelectedImage] = useState(null);
   const location = useLocation();
   const myData = location.state.detail;
@@ -30,16 +30,16 @@ function ApiContainer(props) {
               <div>
                 <img
                   alt="not fount"
-                  width={"250px"}
+                  width={"150px"}
                   src={URL.createObjectURL(selectedImage)}
                 />
                 <br />
                 <button onClick={() => setSelectedImage(null)}>Remove</button>
               </div>
             )}
-            <br />
+            {/* <br />
 
-            <br />
+            <br /> */}
             <input
               type="file"
               name="myImage"
@@ -54,9 +54,5 @@ function ApiContainer(props) {
     </div>
   );
 }
-
-ApiContainer.propTypes = {
-  choosedCard: PropTypes.object,
-};
 
 export default ApiContainer;

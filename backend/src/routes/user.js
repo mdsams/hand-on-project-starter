@@ -11,11 +11,10 @@ const User = require("../models/user");
 router.post(
   "/signup",
   [
-    (check("username", "Please Enter a Valid Username").not().isEmpty(),
-    check("email", "Please Enter a Valid Email").isEmail(),
+    (check("email", "Please Enter a Valid Email").isEmail(),
     check("password", "Please Enter a Valid Password").isLength({
-      min: 8,
-      max: 16,
+      // min: 8,
+      // max: 16,
     })),
   ],
 
@@ -27,7 +26,7 @@ router.post(
       });
     }
 
-    const { username, email, password } = req.body;
+    const { email, password } = req.body;
     try {
       let user = await User.findOne({
         email,
@@ -38,7 +37,6 @@ router.post(
         });
       }
       user = new User({
-        username,
         email,
         password,
       });
@@ -64,6 +62,7 @@ router.post(
           res.status(200).json({
             token,
           });
+          console.log(token);
         },
       );
     } catch (err) {

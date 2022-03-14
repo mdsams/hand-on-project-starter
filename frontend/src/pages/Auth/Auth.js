@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import Avatar from "../../images/avatar.svg";
 import Cuvette from "../../images/cuvette.svg";
 import Register from "./Register";
+import { SIGNUP } from "../../service";
 
 function Auth() {
   const [email, setEmail] = useState("");
@@ -21,6 +22,7 @@ function Auth() {
     // setEmail(email);
     // setpassword(password);
     // setIsLoggedIn(true);
+    SIGNUP(email, password);
     console.log(email + "\n" + password);
   }
 
