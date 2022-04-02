@@ -1,17 +1,12 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-// import ApiContainer from "../../pages/ApiContainer";
 import "./SelectedApi.css";
 
 function SelectedApi(card) {
   console.log(card);
   const history = useHistory();
-
-  // const [selectedApi, setSlectedApi] = useState();
-
   function ApiContainerNavigation() {
     console.log(card);
-    // setSlectedApi(card);
     history.push({ pathname: "/ApiContainer", state: { detail: card } });
   }
   return (
@@ -30,9 +25,5 @@ function SelectedApi(card) {
     </div>
   );
 }
-
-// SelectedApi.PropTypes = {
-//   card.images: PropTypes.object,
-// };
 
 export default SelectedApi;

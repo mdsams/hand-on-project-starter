@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Header from "../../components/Header/Header";
 import { useLocation } from "react-router-dom";
 import "./ApiContainer.css";
-// import Img from '../../images/selectedImage.png'
 
 // eslint-disable-next-line no-unused-vars
 function ApiContainer() {

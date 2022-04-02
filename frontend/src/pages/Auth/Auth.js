@@ -1,29 +1,35 @@
+import useVerification from "../../hooks/useVerification";
 import React, { useState } from "react";
 import "./Auth.css";
 import { useHistory } from "react-router-dom";
 import Avatar from "../../images/avatar.svg";
 import Cuvette from "../../images/cuvette.svg";
 import Register from "./Register";
-import { SIGNUP } from "../../service";
+// import { SIGNUP } from "../../service";
 
 function Auth() {
-  const [email, setEmail] = useState("");
-  const [password, setpassword] = useState("");
+  function formLogin() {
+    history.push("/");
+    // setEmail(email);
+    // setpassword(password);
+    // setIsLoggedIn(true);
+    // SIGNUP(email, password);
+    // resetEmail()
+    // console.log(values + "\n" + password);
+    console.log("Callback function when form is submitted!");
+    console.log("Form Values ", values);
+  }
+
+  //Custom hook call
+  const { handleChange, values, errors, handleSubmit } =
+    useVerification(formLogin);
+
+  // const [password, setpassword] = useState("");
   const [showModel, setShowModel] = useState(false);
   let history = useHistory();
 
   function registerModel() {
     setShowModel(!showModel);
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    history.push("/");
-    // setEmail(email);
-    // setpassword(password);
-    // setIsLoggedIn(true);
-    SIGNUP(email, password);
-    console.log(email + "\n" + password);
   }
 
   return (
@@ -42,28 +48,28 @@ function Auth() {
         <form onSubmit={handleSubmit} className="form">
           <h2 id="text">Login to your Account</h2>
           <input
-            placeholder="Email"
-            name="Email"
-            required
+            type="email"
+            name="email"
+            placeholder="E-mail"
+            onChange={handleChange}
             id="emailAddress"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
           />
+          {errors.email && <span>{errors.email}</span>}
           <input
-            placeholder="Password"
-            required
-            type="password"
             id="password"
-            name="Password"
-            value={password}
-            onChange={(e) => setpassword(e.target.value)}
+            minLength="8"
+            type="password"
+            name="password"
+            placeholder="password"
+            onChange={handleChange}
           />
+          {errors.password && <span>{errors.password}</span>}
           <button
             id="loggedbutton"
             type="submit"
             value="submit"
             color="primary"
-            onSubmit={handleSubmit}
+            // onSubmit={handleChange}
           >
             Login
           </button>
