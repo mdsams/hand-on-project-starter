@@ -1,4 +1,4 @@
-const { createLogger, format, transports } = require("winston");
+import { createLogger, format, transports } from "winston";
 
 const enumerateErrorFormat = format((info) => {
   if (info instanceof Error) {
@@ -7,7 +7,7 @@ const enumerateErrorFormat = format((info) => {
   return info;
 });
 
-module.exports = createLogger({
+export default createLogger({
   level: process.env.NODE_ENV === "production" ? "info" : "debug",
   format: format.combine(
     enumerateErrorFormat(),

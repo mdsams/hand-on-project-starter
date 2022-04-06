@@ -2,10 +2,10 @@
   "name": "nodejs-rest-api-starter",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
+    "dev": "nodemon --experimental-modules --es-module-specifier-resolution=node src/index.js",
     "lint": "npx eslint src/"
   },
   "author": "",
@@ -22,10 +22,8 @@
     "winston": "^3.6.0"
   },
   "devDependencies": {
-    "eslint": "^7.30.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "nodemon": "^2.0.12",
-    "prettier": "^2.3.2"
+    "nodemon": "^2.0.12"
   }
 }
