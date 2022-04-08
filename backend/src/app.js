@@ -1,10 +1,8 @@
 import express, { urlencoded, json } from "express";
 import morgan from "morgan";
-import { config } from "dotenv";
-// const user = require("./routes/user");
-// const auth = require("./middlewares/auth");
-// const verify = require("./routes/verify");
 import logger from "./utils/logger";
+import { config } from "dotenv";
+import { auth } from "./routes/user";
 config();
 
 //Express Server
@@ -21,7 +19,7 @@ app.use(morgan("dev"));
 //   res.json({ message: "API Working" });
 // });
 
-// app.use("/user", user);
+app.use("/auth", auth);
 // app.use("/protected", auth, verify);
 
 export default async () => {

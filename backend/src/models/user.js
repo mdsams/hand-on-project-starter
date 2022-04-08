@@ -1,6 +1,24 @@
-const mongoose = require("mongoose");
+import pkg from "mongoose";
+const { Schema, model } = pkg;
 
-const UserSchema = mongoose.Schema({
+const addressSchema = new Schema({
+  street: String,
+  houseNo: String,
+  pincode: {
+    type: String,
+    required: true,
+  },
+  state: {
+    type: String,
+    required: true,
+  },
+  country: {
+    type: String,
+    required: true,
+  },
+});
+
+const UserSchema = new Schema({
   userName: {
     type: String,
   },
@@ -12,10 +30,11 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  address: [addressSchema],
   createdAt: {
     type: Date,
     default: Date.now(),
   },
 });
 
-module.exports = mongoose.model("user", UserSchema);
+export default model("user", UserSchema);
