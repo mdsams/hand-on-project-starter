@@ -7,9 +7,8 @@ const useForm = (callback) => {
   //Errors
   const [errors, setErrors] = useState({});
 
+  //A function to validate each input values
   const validate = (event, name, value) => {
-    //A function to validate each input values
-
     switch (name) {
       case "email":
         if (

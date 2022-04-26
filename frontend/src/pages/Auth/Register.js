@@ -47,7 +47,7 @@ function Register({ setShowModel }) {
               onClick={() => setShowModel(false)}
               // onSubmit={handleSubmit}
             >
-              Login
+              SignUp
             </button>
             <p></p>
           </div>

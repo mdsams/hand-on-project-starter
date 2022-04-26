@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 import "./SelectedApi.css";
 
 function SelectedApi(card) {
-  console.log(card);
   const history = useHistory();
   function ApiContainerNavigation() {
     console.log(card);

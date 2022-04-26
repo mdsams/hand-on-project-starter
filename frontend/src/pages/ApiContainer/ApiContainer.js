@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Header from "../../components/Header/Header";
 import { useLocation } from "react-router-dom";
+import seletedImage from "../../images/selectedImage.png";
 import "./ApiContainer.css";
 
 // eslint-disable-next-line no-unused-vars
@@ -25,28 +26,37 @@ function ApiContainer() {
         </div>
         <div className="enteryData">
           <div className="enteryDataBox">
-            {selectedImage && (
-              <div>
+            {selectedImage ? (
+              <>
                 <img
-                  alt="not fount"
-                  width={"150px"}
+                  alt="not found"
+                  width={"250px"}
+                  height={"250px"}
                   src={URL.createObjectURL(selectedImage)}
                 />
                 <br />
                 <button onClick={() => setSelectedImage(null)}>Remove</button>
-              </div>
+              </>
+            ) : (
+              <>
+                <div className="slectedImg">
+                  <img
+                    alt="not found"
+                    width={"150px"}
+                    height={"150px"}
+                    src={seletedImage}
+                  />
+                </div>
+                <input
+                  type="file"
+                  name="myImage"
+                  onChange={(event) => {
+                    console.log(event.target.files[0]);
+                    setSelectedImage(event.target.files[0]);
+                  }}
+                />
+              </>
             )}
-            {/* <br />
-
-            <br /> */}
-            <input
-              type="file"
-              name="myImage"
-              onChange={(event) => {
-                console.log(event.target.files[0]);
-                setSelectedImage(event.target.files[0]);
-              }}
-            />
           </div>
         </div>
       </div>

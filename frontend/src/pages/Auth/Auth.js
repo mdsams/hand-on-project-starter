@@ -5,19 +5,21 @@ import { useHistory } from "react-router-dom";
 import Avatar from "../../images/avatar.svg";
 import Cuvette from "../../images/cuvette.svg";
 import Register from "./Register";
-// import { SIGNUP } from "../../service";
+import { SIGNIN } from "../../services/service";
+// import parseJwt from "../../constants/jwtDecode";
 
 function Auth() {
-  function formLogin() {
-    history.push("/");
-    // setEmail(email);
-    // setpassword(password);
-    // setIsLoggedIn(true);
-    // SIGNUP(email, password);
-    // resetEmail()
-    // console.log(values + "\n" + password);
-    console.log("Callback function when form is submitted!");
-    console.log("Form Values ", values);
+  async function formLogin() {
+    try {
+      const token = await SIGNIN(values.email, values.password);
+      // const token = localStorage.getItem("token");
+      // let payload = parseJwt(token);
+      if (token !== undefined) {
+        history.push("/");
+      }
+    } catch (error) {
+      alert(error);
+    }
   }
 
   //Custom hook call
@@ -69,7 +71,7 @@ function Auth() {
             type="submit"
             value="submit"
             color="primary"
-            // onSubmit={handleChange}
+            onSubmit={handleChange}
           >
             Login
           </button>

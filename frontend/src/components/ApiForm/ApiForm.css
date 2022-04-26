@@ -22,7 +22,6 @@
 
 #input1,
 #input2,
-#textarea,
 #button {
   width: 100%;
   padding: 12px 20px;
@@ -32,6 +31,10 @@
   outline: none;
 }
 
+#inputarea{
+  padding: 12px 12px;
+  margin: 10px 0;
+}
 button {
   background-color: rgb(73, 73, 219);
   color: white;

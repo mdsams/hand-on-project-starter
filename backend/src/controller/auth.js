@@ -12,13 +12,14 @@ const router = Router();
 //signup controller
 export const signup = async (req, res) => {
   const { email, password } = req.body;
+  console.log(email);
   try {
     let user = await User.findOne({
       email,
     });
     if (user) {
       return res.status(400).json({
-        msg: "User Already Exist",
+        message: "User Already Exist",
       });
     }
     user = new User({
@@ -46,6 +47,7 @@ export const signup = async (req, res) => {
       (err, token) => {
         if (err) throw err;
         res.status(200).json({
+          message: "SignUp completed",
           token,
         });
         console.log(token);

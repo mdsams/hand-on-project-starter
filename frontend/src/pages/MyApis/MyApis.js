@@ -1,10 +1,12 @@
 import React from "react";
+import Header from "../../components/Header/Header";
 
 function MyApis() {
   return (
-    <div>
+    <>
+      <Header />
       <h1>MyApis</h1>
-    </div>
+    </>
   );
 }
 

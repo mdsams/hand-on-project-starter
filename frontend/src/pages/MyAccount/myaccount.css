@@ -1,0 +1,56 @@
+.accountflex {
+display: flex;
+justify-content:space-around;   
+}
+.accountphoto{
+padding-top: 2.5rem;
+}
+
+.accountImg {
+    width: 500px;
+    height: 400px;
+    object-fit: cover;
+    
+}
+
+.accountButton{
+    display: flex;
+    flex-direction: column;
+}
+
+.accountButton2{
+    margin-top: 20px;
+    display: flex;
+    justify-content:space-between
+}
+
+.accountButton2 button {
+padding: 8px 16px;
+width: 40%;
+/* margin-right: 20px; */
+background: #7f8eda;
+border-radius: 5px;
+}
+
+.accountDetail{
+    border: 2px solid black;
+    margin-top: 2.5rem;
+    height: 100%;
+    width: 40%;
+    
+}
+
+.accountDetail li{
+    overflow: hidden;
+    border-bottom: 1px solid purple;
+    /* margin-bottom: 5px; */
+    padding: 3px 0 3px 20px;
+    line-height: 4.2rem;
+    /* border-bottom: 1px solid #ececec; */
+}
+
+.accountDetail li span {
+    font-weight: bold;
+    align-items: center;
+    margin-right: 100px ;
+}
