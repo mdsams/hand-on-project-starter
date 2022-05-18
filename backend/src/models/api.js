@@ -2,9 +2,6 @@ import pkg from "mongoose";
 const { Schema, model } = pkg;
 
 const apiSchema = new Schema({
-  apiId: {
-    type: ObjectI,
-  },
   apiName: {
     type: String,
     required: true,
@@ -22,3 +19,5 @@ const apiSchema = new Schema({
     default: Date.now(),
   },
 });
+
+export default model("Api", apiSchema);

@@ -3,6 +3,9 @@ import morgan from "morgan";
 import logger from "./utils/logger";
 import { config } from "dotenv";
 import { auth } from "./routes/user";
+import { apiRoute } from "./routes/user";
+import { apiUser } from "./routes/user";
+
 config();
 
 //Express Server
@@ -20,6 +23,9 @@ app.use(morgan("dev"));
 // });
 
 app.use("/auth", auth);
+app.use("/api", apiRoute);
+app.use("/user", apiUser);
+
 // app.use("/protected", auth, verify);
 
 export default async () => {

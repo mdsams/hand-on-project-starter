@@ -35,6 +35,7 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now(),
   },
+  apis: [{ type: Schema.Types.ObjectId, ref: "Api", required: true }],
 });
 
-export default model("user", UserSchema);
+export default model("User", UserSchema);

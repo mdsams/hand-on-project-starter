@@ -1,4 +1,5 @@
-import { Router } from "express";
+import pkg from "express";
+const { req: request, res: response, Router } = pkg;
 import { check, validationResult } from "express-validator";
 import bcrypt from "bcryptjs";
 import signjson from "jsonwebtoken";
